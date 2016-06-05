@@ -1,9 +1,16 @@
-#newZipForm {
-
+.form-container {
   width: 75%;
   margin: 0 auto;
   text-align: center;
-  // md-button {
-  //   display: block;
-  // }
+  background-color: whitesmoke;
+  box-shadow: 0px 1px 4px grey;
+  border-radius: 2px;
+  padding: 20px;
+  button, input {
+    background-color: white !important;
+  }
+  button {
+    vertical-align: top;
+    margin-top: 15px;
+  }
 }

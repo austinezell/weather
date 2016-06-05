@@ -6,5 +6,8 @@ import "./module";
 import "./components/history/history";
 import "./components/history/HistoryCtrl";
 
-import "./components/newZip/newZip";
 import "./components/newZip/NewZipCtrl";
+import "./components/newZip/newZip";
+
+import "./services/WeatherService";
+import "./services/LocalStorageService";
