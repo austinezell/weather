@@ -1,0 +1,14 @@
+<div class="form-container">
+  <form name="zipForm" ng-submit="" id="newZipForm">
+    <md-input-container>
+      <label>Zip Code</label>
+      <input name="newZip" ng-min-length="5" ng-model="newZip" required>
+      <div ng-messages="newZipForm.newZip.$error">
+        <div ng-message="required">This is required!</div>
+      </div>
+    </md-input-container>
+    <md-button class="md-raised">
+      Look Up The Trends
+    </md-button>
+  </form>
+</div>
