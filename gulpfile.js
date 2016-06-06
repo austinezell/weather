@@ -3,15 +3,17 @@ const sass = require('gulp-sass');
 const prefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean-css');
 
-gulp.task('default', ['sass', 'watch']);
-gulp.task('dev', ['sass']);
+gulp.task('default', ['sass', 'html', 'watch']);
+gulp.task('dev', ['sass', 'html']);
 
 const dir = {
   src: {
-    scss: "./src/scss/**/*.scss"
+    scss: "./src/scss/**/*.scss",
+    html: "./src/html/**/*.html"
   },
   dist: {
-    scss: "./dist/css"
+    scss: "./public/css",
+    html: "./public/"
   }
 }
 
@@ -28,6 +30,12 @@ gulp.task('sass', function(done){
   .on('end', done)
 });
 
+gulp.task('html', function(){
+  return gulp.src(dir.src.html)
+  .pipe(gulp.dest(dir.dist.html))
+})
+
 gulp.task('watch', function(){
   gulp.watch(dir.src.scss, ['sass'])
+  gulp.watch(dir.src.html, ['html'])
 })

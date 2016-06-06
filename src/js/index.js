@@ -10,4 +10,4 @@ import "./components/newZip/NewZipCtrl";
 import "./components/newZip/newZip";
 
 import "./services/WeatherService";
-import "./services/LocalStorageService";
+import "./services/HistoryService";
