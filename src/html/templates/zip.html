@@ -1,5 +1,6 @@
 <div class="form-container">
   <h1>Weather'n'Stuff</h1>
+  <h3>Enter a US zip code to view the weather history of that location!</h3>
   <form name="zipForm" ng-submit="zip.getCityInfo(zip.zip)" id="zipForm">
     <md-input-container>
       <label>Zip Code</label>
@@ -9,7 +10,7 @@
       <div ng-message="pattern">Please enter a 5 digit zip code!</div>
     </div> -->
   </md-input-container>
-  <md-button type="submit" class="md-raised">
+  <md-button type="submit" class="md-raised md-primary">
     Look Up The Trends
   </md-button>
   <div class="expand-container">

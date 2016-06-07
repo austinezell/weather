@@ -40,7 +40,7 @@
           this.state = {
             gatheringData: false,
             weatherData: null,
-            error: err,
+            error: err.data,
             fields: null
           }
         }

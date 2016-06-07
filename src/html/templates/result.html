@@ -1,13 +1,16 @@
 <div class="table-container">
   <div ng-show="result.state.gatheringData" class="display-table">
     <div class="vertical-cell">
-      <img src="./images/loading.gif" alt="loading image">
+      <md-progress-circular md-diameter="200" md-mode="indeterminate"></md-progress-circular>
     </div>
   </div>
-  <table ng-hide="result.state.gatheringData || !result.state.weatherData">
+  <div class="error" ng-show="result.state.error">
+    <h1>{{result.state.error}}</h1>
+  </div>
+  <table rules="groups" ng-hide="result.state.gatheringData || !result.state.weatherData">
     <thead>
       <tr>
-        <th>Time Stamp</th>
+        <th>Date</th>
         <th ng-repeat="field in result.state.fields">{{field}}</th>
       </tr>
     </thead>

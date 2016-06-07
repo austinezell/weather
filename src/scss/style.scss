@@ -9,8 +9,12 @@
   padding-bottom: 40px;
 }
 
-h1 {
+h1, h3 {
   color: $primary;
+}
+
+md-progress-circular {
+  margin: 0 auto;
 }
 
 a {
@@ -23,7 +27,7 @@ a {
   }
   &:hover, &:active {
     text-decoration: none;
-    color: $accent;
+    color: $primary-dark;
   }
 }
 

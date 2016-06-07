@@ -1,5 +1,5 @@
 .table-container {
-  padding-top: 20px;
+  padding: 20px 0;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -21,16 +21,26 @@
 
 table {
   margin: 0 auto;
-  box-shadow: 0 0 2px $divider;
-  background-color: $primary-light;
-}
-
-th{
   border: 1px solid $divider;
+  box-shadow: 0 0 5px $divider;
+  background-color: white;
+}
+thead {
+  border: 1px solid $divider;
+}
+th{
   padding: 5px;
+  background-color: white;
+}
+td {
+  box-shadow: 0 0 2px white;
 }
 
 
 tr:nth-child(even) {
-  background: white;
+  background-color:$primary-light;
+}
+
+tr:nth-child(odd){
+  background-color:ghostwhite;
 }
