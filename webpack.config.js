@@ -4,7 +4,13 @@ const webpack = require("webpack");
 module.exports = {
   entry: {
     app: "./src/js/index.js",
-    vendor: ["angular", "angular-animate", "angular-material", "angular-aria", "angular-ui-router"]
+    vendor: [
+      "angular",
+      "angular-animate",
+      "angular-material",
+      "angular-aria",
+      "angular-messages"
+    ]
   },
   output: {
     path: __dirname + '/public/js/',

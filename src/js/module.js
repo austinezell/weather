@@ -1,4 +1,4 @@
 (function() {
   'use strict';
-  angular.module("weatherApp" , ["ngMaterial"])
+  angular.module("weatherApp" , ["ngMaterial", "ngMessages"])
 }());

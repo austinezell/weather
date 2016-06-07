@@ -4,9 +4,8 @@
       <md-progress-circular md-diameter="200" md-mode="indeterminate"></md-progress-circular>
     </div>
   </div>
-  <div class="error" ng-show="result.state.error">
-    <h1>{{result.state.error}}</h1>
-  </div>
+  <h3 ng-show="result.location">{{result.location}}</h3>
+  <h1 class="error" ng-show="result.state.error">{{result.state.error}}</h1>
   <table rules="groups" ng-hide="result.state.gatheringData || !result.state.weatherData">
     <thead>
       <tr>
