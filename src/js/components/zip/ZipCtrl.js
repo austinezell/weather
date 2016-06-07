@@ -6,19 +6,15 @@ import options from "../../config/options";
 
     ZipCtrl.$inject = ["WeatherService"];
     function ZipCtrl(WeatherService){
-      let vm = this;
+      this.zipRegEx = /\d{5}/;
+      this.revealed = false;
+      this.options = options;
 
-      vm.getCityInfo = getCityInfo;
-      vm.toggleSelected = toggleSelected;
-      vm.zipRegEx = /\d{5}/;
-      vm.revealed = false;
-      vm.options = options;
-
-      function getCityInfo(zip){
-        WeatherService.getWeather(zip, vm.options)
+      this.getCityInfo = (zip) => {
+        WeatherService.getWeather(zip, this.options)
       }
 
-      function toggleSelected(option){
+      this.toggleSelected = (option) => {
         option.selected = !option.selected;
       }
     }
