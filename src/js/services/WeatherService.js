@@ -25,6 +25,7 @@
 
     this.getWeather = (zip) => {
       LocationService.location = null;
+      this.state.error = null;
       this.state.gatheringData = true;
       const fields = this.options.filter(option=>option.selected);
       $http.post("/api/", {zip, fields})
