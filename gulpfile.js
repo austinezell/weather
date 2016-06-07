@@ -4,7 +4,7 @@ const prefixer = require('gulp-autoprefixer');
 const clean = require('gulp-clean-css');
 
 gulp.task('default', ['sass', 'html', 'watch']);
-gulp.task('dev', ['sass', 'html']);
+gulp.task('dev', ['sass', 'html', "material"]);
 
 const dir = {
   src: {
@@ -33,6 +33,11 @@ gulp.task('sass', function(done){
 gulp.task('html', function(){
   return gulp.src(dir.src.html)
   .pipe(gulp.dest(dir.dist.html))
+})
+
+gulp.task('material', function(){
+  return gulp.src('./src/ngMaterial/angular-material.css')
+  .pipe(gulp.dest(dir.dist.scss))
 })
 
 

@@ -16,7 +16,6 @@
       this.history = this.readHistory();
 
       this.addNewZip = (zip) => {
-        let history = this.readHistory();
         if (this.history.includes(zip)) return;
         else {
           this.history.push(zip);
