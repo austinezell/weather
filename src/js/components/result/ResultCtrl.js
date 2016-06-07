@@ -13,7 +13,6 @@
       ()=>WeatherService.state,
       (current, prev)=> {
         vm.state = current;
-        console.log(vm.state);
       }, true)
   }
 
