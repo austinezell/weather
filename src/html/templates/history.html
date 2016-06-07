@@ -1,0 +1,12 @@
+<div ng-show="history.zips.length" class="history-container">
+
+  <a href ng-click="history.toggle()">Select from history</a>
+  <div class="history-list-container" ng-class="{revealed: history.showHistory}">
+    <ul id="history-list">
+      <li class="history-item" ng-repeat="zip in history.zips">
+        <a class="history-link" href ng-click="history.getCityInfo(zip)">{{zip}}</a>
+        <a href class="remove-link" ng-click="history.removeZip(zip)" title="Remove {{zip}}">x</a>
+      </li>
+    </ul>
+  </div>
+</div>

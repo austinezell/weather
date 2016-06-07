@@ -14,12 +14,13 @@
       ()=>WeatherService.state,
       (current, prev)=> {
         vm.state = current;
-      }, true)
+      }, true
+    )
 
-      $scope.$watch(
-        ()=> LocationService.location,
-        (current, prev) => vm.location = current
-      )
+    $scope.$watch(
+      ()=> LocationService.location,
+      (current, prev) => vm.location = current
+    )
   }
 
 

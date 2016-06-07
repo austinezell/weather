@@ -5,7 +5,6 @@
 
     function history(){
       const directive = {
-        link,
         templateUrl: "./templates/history.html",
         restrict: 'E',
         controller: "HistoryCtrl",
@@ -14,10 +13,6 @@
       }
 
       return directive;
-
-      function link(scope, element, attrs){
-
-      }
     }
 
 }());

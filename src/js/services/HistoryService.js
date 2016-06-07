@@ -15,21 +15,19 @@
 
       this.history = this.readHistory();
 
-      this.writeHistory = (zip) => {
+      this.addNewZip = (zip) => {
         let history = this.readHistory();
-        if (history.includes(zip)) return;
+        if (this.history.includes(zip)) return;
         else {
-          history.push(zip);
-          localStorage.history = JSON.stringify(history);
-          this.history = history;
+          this.history.push(zip);
+          localStorage.history = JSON.stringify(this.history);
         }
       }
 
       this.removeFromHistory = (zip) => {
-        let history = this.readHistory();
-        const index = history.indexOf(zip);
-        hisotry.splice(index, 1);
-        localStorage.hisgtory = JSON.stringify(history);
+        const index = this.history.indexOf(zip);
+        this.history.splice(index, 1);
+        localStorage.history = JSON.stringify(this.history);
       }
     }
 }());

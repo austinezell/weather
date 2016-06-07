@@ -1,0 +1,57 @@
+.history-container {
+  position: absolute;
+  top: 10px;
+  right: 70px;
+  a {
+    color: $accent;
+  }
+}
+
+.history-list-container{
+  background-color: white;
+  text-align: center;
+  box-shadow: 0 0 2px $divider;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s;
+  &.revealed {
+    max-height: 40vh;
+    overflow-x: auto;
+  }
+}
+
+#history-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0;
+}
+
+.history-item {
+  padding: 5px 0;
+  position: relative;
+}
+
+.history-link{
+  display: inline-block;
+  transition: all .5s;
+  width: 70%;
+  height: 100%;
+  color: $primary-dark !important;
+  &:hover{
+    background-color: lighten(rgba($accent, .3), 15);
+    border-radius: 10px 0 10px 0;
+  }
+}
+
+.remove-link {
+  position: absolute;
+  right: 4px;
+  width: 20px;
+  height:20px;
+  transition: all .5s;
+  color: crimson !important;
+  border-radius: 10px;
+  &:hover {
+    background-color: lighten(rgba(crimson, .3), 15);
+  }
+}

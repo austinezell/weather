@@ -1,16 +1,16 @@
 (function() {
   'use strict';
     angular.module("weatherApp")
-    .controller("ZipCtrl", ZipCtrl)
+    .controller("ZipFormCtrl", ZipFormCtrl)
 
-    ZipCtrl.$inject = ["WeatherService"];
-    function ZipCtrl(WeatherService){
+    ZipFormCtrl.$inject = ["WeatherService"];
+    function ZipFormCtrl(WeatherService){
       this.zipRegEx = /\d{5}/;
       this.revealed = false;
       this.options = WeatherService.options;
 
       this.getCityInfo = (zip) => {
-        WeatherService.getWeather(zip, this.options)
+        WeatherService.getWeather(zip)
       }
 
       this.toggleSelected = (option) => {

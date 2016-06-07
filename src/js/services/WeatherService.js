@@ -3,9 +3,9 @@
   angular.module("weatherApp")
   .service('WeatherService', WeatherService)
 
-  WeatherService.$inject = ["$http", "LocationService"];
+  WeatherService.$inject = ["$http", "LocationService", "HistoryService"];
 
-  function WeatherService($http, LocationService){
+  function WeatherService($http, LocationService, HistoryService){
     this.state = {
       gatheringData: false,
       weatherData: null,
@@ -23,13 +23,14 @@
       return {data, timestamp};
     }
 
-    this.getWeather = (zip, options) => {
+    this.getWeather = (zip) => {
       LocationService.location = null;
       this.state.gatheringData = true;
-      const fields = options.filter(option=>option.selected);
+      const fields = this.options.filter(option=>option.selected);
       $http.post("/api/", {zip, fields})
       .then(
         res=> {
+          HistoryService.addNewZip(zip);
           this.state = {
             gatheringData: false,
             weatherData: res.data.map(generateOrderedData),

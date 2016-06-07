@@ -5,9 +5,9 @@
 
     function zipForm(){
       const directive = {
-        templateUrl: "./templates/zip.html",
+        templateUrl: "./templates/zipForm.html",
         restrict: 'E',
-        controller: "ZipCtrl",
+        controller: "ZipFormCtrl",
         controllerAs: "zip",
         bindToController: true
       }
