@@ -5,7 +5,6 @@
 
   function waResultTable(){
     const directive = {
-      link,
       templateUrl: "./templates/result.html",
       restrict: 'E',
       controller: "ResultCtrl",
@@ -13,11 +12,6 @@
       bindToController: true
     }
 
-    function link(scope, element, attrs) {
-
-    }
-
     return directive;
-
   }
 }());

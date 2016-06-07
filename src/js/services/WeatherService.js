@@ -13,15 +13,11 @@
       fields: null
     }
 
-    function sortByKey(a, b){
-      return a.key > b.key ? 1 : -1
-    }
-
     function generateOrderedData(datum){
       const orderedKeys = Object.keys(datum).sort();
       let data = [], timestamp;
       for (let key of orderedKeys){
-        if (key=== "timestamp") timestamp = new Date(datum[key]);
+        if (key === "timestamp") timestamp = new Date(datum[key]);
         else data.push(datum[key]);
       }
       return {data, timestamp};
@@ -37,7 +33,7 @@
             gatheringData: false,
             weatherData: res.data.map(generateOrderedData),
             error: null,
-            fields: fields.sort(sortByKey).map(field=>field.name)
+            fields: fields.sort((a,b)=>a.key > b.key ? 1 : -1).map(field=>field.name)
           }
         },
         err=>{
