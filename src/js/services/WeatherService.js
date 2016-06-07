@@ -6,20 +6,26 @@
   WeatherService.$inject = ["$http"];
 
   function WeatherService($http){
-    this.weatherData = null;
-    this.error = null;
+    this.state = {
+      gatheringData: false,
+      weatherData: null,
+      error: null
+    }
 
     this.getWeather = (zip, options) => {
       const fields = options.filter(option=>option.selected);
+      this.state.gatheringData = true;
       $http.post("/api/", {zip, fields})
       .then(
         res=> {
-          this.weatherData = res.data;
-          this.error = null;
+          this.state.gatheringData = false;
+          this.state.weatherData = res.data;
+          this.state.error = null;
         },
         err=>{
-          this.weatherData = null;
-          this.error = err.data
+          this.state.gatheringData = false;
+          this.state.weatherData = null;
+          this.state.error = err.data
         }
       )
     }

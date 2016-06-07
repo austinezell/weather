@@ -1,9 +1,9 @@
 <div class="form-container">
-  <form name="zipForm" ng-submit="nz.getCityInfo(nz.newZip)" id="newZipForm">
+  <form name="zipForm" ng-submit="zip.getCityInfo(zip.zip)" id="zipForm">
     <md-input-container>
       <label>Zip Code</label>
-      <input name="newZip" ng-model="nz.newZip" ng-pattern="nz.zipRegEx" required>
-      <!-- <div ng-messages="zipForm.newZip.$error">
+      <input name="zip" ng-model="zip.zip" ng-pattern="zip.zipRegEx" required>
+      <!-- <div ng-messages="zipForm.zip.$error">
       <div ng-message="required">This is required!</div>
       <div ng-message="pattern">Please enter a 5 digit zip code!</div>
     </div> -->
@@ -12,12 +12,12 @@
     Look Up The Trends
   </md-button>
   <div class="expand-container">
-    <a class="expand-link" ng-click="nz.revealed = !nz.revealed" href>More options</a>
+    <a class="expand-link" ng-click="zip.revealed = !zip.revealed" href>More options</a>
   </div>
-  <div class="checkbox-container" ng-class="{revealed: nz.revealed}">
-    <span class="option" ng-repeat="option in nz.options">
+  <div class="checkbox-container" ng-class="{revealed: zip.revealed}">
+    <span class="option" ng-repeat="option in zip.options">
       <md-checkbox ng-checked="option.selected" aria-label="option"
-      ng-click="nz.toggleSelected(option)"
+      ng-click="zip.toggleSelected(option)"
       ></md-checkbox>
       <label for="option">{{option.name}}</label>
     </span>

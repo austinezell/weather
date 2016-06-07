@@ -1,23 +1,23 @@
 (function() {
   'use strict';
     angular.module("weatherApp")
-    .directive("waNewZipForm", newZipForm)
+    .directive("waZipForm", zipForm)
 
-    function newZipForm(){
+    function zipForm(){
       const directive = {
         link,
-        templateUrl: "./templates/newZip.html",
+        templateUrl: "./templates/zip.html",
         restrict: 'E',
-        controller: "NewZipCtrl",
-        controllerAs: "nz",
+        controller: "ZipCtrl",
+        controllerAs: "zip",
         bindToController: true
       }
-
-      return directive;
 
       function link(scope, element, attrs){
 
       }
+
+      return directive;
     }
 
 }());

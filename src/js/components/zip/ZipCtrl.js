@@ -2,10 +2,10 @@ import options from "../../config/options";
 (function() {
   'use strict';
     angular.module("weatherApp")
-    .controller("NewZipCtrl", NewZipCtrl)
+    .controller("ZipCtrl", ZipCtrl)
 
-    NewZipCtrl.$inject = ["WeatherService"];
-    function NewZipCtrl(WeatherService){
+    ZipCtrl.$inject = ["WeatherService"];
+    function ZipCtrl(WeatherService){
       let vm = this;
 
       vm.getCityInfo = getCityInfo;

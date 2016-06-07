@@ -13,11 +13,11 @@
         else return [];
       }
 
-      this.writeHistory = (newZip) => {
+      this.writeHistory = (zip) => {
         let history = this.readHistory();
-        if (history.includes(newZip)) return;
+        if (history.includes(zip)) return;
         else {
-          history.push(newZip);
+          history.push(zip);
           localStorage.history = JSON.stringify(history);
         }
       }
