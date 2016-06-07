@@ -1,19 +1,21 @@
 <div class="table-container">
-  <div class="display-table">
-    <div  class="vertical-cell">
-      <img ng-show="result.state.loading" src="./images/loading.gif" alt="loading image">
-      <table ng-hide="result.state.loading">
-        <table>
-          <thead>
-            <tr>
-              <th ng-repeat="field in result.state.fields">{{field.name}}</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          </tbody>
-        </table>
-      </table>
+  <div ng-show="result.state.gatheringData" class="display-table">
+    <div class="vertical-cell">
+      <img src="./images/loading.gif" alt="loading image">
     </div>
   </div>
+  <table ng-hide="result.state.gatheringData || !result.state.weatherData">
+    <thead>
+      <tr>
+        <th>Time Stamp</th>
+        <th ng-repeat="field in result.state.fields">{{field}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="date in result.state.weatherData">
+        <td>{{date.timestamp.toLocaleDateString()}}</td>
+        <td ng-repeat="datum in date.data track by $index">{{datum}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

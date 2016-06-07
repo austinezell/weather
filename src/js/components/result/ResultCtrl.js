@@ -7,7 +7,7 @@
 
   function ResultCtrl($scope, WeatherService){
     let vm = this;
-    vm.state = {};
+    vm.state = null;
 
     $scope.$watch(
       ()=>WeatherService.state,

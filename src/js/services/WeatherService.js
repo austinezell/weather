@@ -28,8 +28,8 @@
     }
 
     this.getWeather = (zip, options) => {
-      const fields = options.filter(option=>option.selected);
       this.state.gatheringData = true;
+      const fields = options.filter(option=>option.selected);
       $http.post("/api/", {zip, fields})
       .then(
         res=> {
