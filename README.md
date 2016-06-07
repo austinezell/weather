@@ -7,8 +7,8 @@
 Must have Node and npm installed. Run `npm install` from terminal.
 This will install dependencies and run a `postinstall` script to compile all needed code.
 
-(`postinstall`: `gulp dev` to compile *css* from *scss* and to bundle all *js* files together, as well as moving all *html* to the proper location)
+(`postinstall`: `gulp dev` to compile **css** from **scss** and to bundle all **js** files together, as well as moving all **html** and image files to the proper location)
 
-Must export a *Weather Source* api key to environment as `API_KEY` for application to work properly.
+Must export a **Weather Source** api key to environment as `API_KEY` for application to work properly. (The **dotenv** node package will export any such variables included in a file `.env`)
 
 `npm start` will start the server.

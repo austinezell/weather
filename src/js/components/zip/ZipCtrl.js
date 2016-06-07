@@ -1,4 +1,3 @@
-import options from "../../config/options";
 (function() {
   'use strict';
     angular.module("weatherApp")
@@ -8,7 +7,7 @@ import options from "../../config/options";
     function ZipCtrl(WeatherService){
       this.zipRegEx = /\d{5}/;
       this.revealed = false;
-      this.options = options;
+      this.options = WeatherService.options;
 
       this.getCityInfo = (zip) => {
         WeatherService.getWeather(zip, this.options)

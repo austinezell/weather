@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
   text-align: center;
+  overflow-y: auto;
 }
 
 .display-table {
@@ -20,12 +21,12 @@
 
 table {
   margin: 0 auto;
-  box-shadow: 0 0 2px grey;
-  background-color: lightcyan;
+  box-shadow: 0 0 2px $divider;
+  background-color: $primary-light;
 }
 
 th{
-  border: 1px solid grey;
+  border: 1px solid $divider;
   padding: 5px;
 }
 

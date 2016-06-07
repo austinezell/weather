@@ -11,3 +11,5 @@ import "./components/result/result";
 
 import "./services/WeatherService";
 import "./services/HistoryService";
+
+import "./config/config";
