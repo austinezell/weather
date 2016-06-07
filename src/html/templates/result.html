@@ -1,3 +1,19 @@
-<div>
-
+<div class="table-container">
+  <div class="display-table">
+    <div  class="vertical-cell">
+      <img ng-show="result.state.loading" src="./images/loading.gif" alt="loading image">
+      <table ng-hide="result.state.loading">
+        <table>
+          <thead>
+            <tr>
+              <th ng-repeat="field in result.state.fields">{{field.name}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </table>
+    </div>
+  </div>
 </div>

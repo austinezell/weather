@@ -7,12 +7,14 @@
 
   function ResultCtrl($scope, WeatherService){
     let vm = this;
+    vm.state = {};
 
     $scope.$watch(
-      ()=>WeatherService.weatherData,
-      (prev, current)=> {
-        console.log(prev, current)
-      })
+      ()=>WeatherService.state,
+      (current, prev)=> {
+        vm.state = current;
+        console.log(vm.state);
+      }, true)
   }
 
 

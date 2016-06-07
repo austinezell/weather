@@ -12,7 +12,7 @@ function generateUrl(options){
   for (let field of options.fields){
     fieldQuery += field.key + ","
   }
-  fieldQuery +="postal_code";
+  fieldQuery +="timestamp";
   return `https://api.weathersource.com/v1/${process.env.API_KEY}/history_by_postal_code.json?limit=25&country_eq=US&postal_code_eq=${options.zip}&timestamp_between=${threeWeeksAgo},${today}&${fieldQuery}`
 }
 
