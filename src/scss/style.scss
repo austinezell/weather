@@ -1,3 +1,5 @@
+@import "_variables";
+
 .container {
   padding-top: 15px;
   width: 80%;
@@ -9,4 +11,4 @@
 
 
 
-@import "_zip", "_result";
+@import "_zip", "_result", "_history";

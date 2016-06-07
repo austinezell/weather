@@ -20,8 +20,14 @@
 
 table {
   margin: 0 auto;
-  th{
-    border: 1px solid grey;
-    padding: 5px;
-  }
+  box-shadow: 0 0 2px grey;
+}
+th{
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+
+tr:nth-child(even) {
+  background: white;
 }
